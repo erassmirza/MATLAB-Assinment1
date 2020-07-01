@@ -55,4 +55,46 @@ a=sqrt(23^2+43^2); b=sqrt(23^2+16^2); c=sqrt(43^2+16^2);
 alpha=round(acosd((b^2+c^2-a^2)/(2*b*c)))
 % b)
 p=(a+b+c)/2;
-AreaOfTriangle=round(sqrt(p*(p-a)*(p-b)*(p-c)))
+areaOfTriangle=round(sqrt(p*(p-a)*(p-b)*(p-c)))
+
+%%                          QUESTION 07
+
+a=10.5+4.5; b=15+4.5; c=15+10.5;
+% a)
+%c^2=a^2+b^2-2*a*b*cosd(gamma)
+gamma=round(acosd((a^2+b^2-c^2)/(2*a*b)))
+% b)
+% sind(beta)/b=sind(gamma)/c
+beta=round(asind(sind(gamma)/c*b))
+% sind(alpha)/a=sind(gamma)/c
+alpha=round(asind(sind(gamma)/c*a))
+% c)
+sumOfAngles=alpha+beta+gamma
+
+%%                          QUESTION 08
+
+totalEggs=4217; eggsPerBox=36;
+remainEggs=rem(totalEggs,eggsPerBox)
+
+%%                          QUESTION 09
+
+R1=119.8; R2=120.5; R3=121.2; R4=119.3; V=15; c=R2/R1; d=R3/R4;
+V_ab=V*((c-d)/((c+1)*(d+1)))
+
+%%                          QUESTION 10
+
+V=80; f=50; R=6; L=400e-3; C=40e-6; w=2*pi*f;
+I=V/(sqrt(R^2+(w*L-1/(w*C))^2))
+
+%%                          QUESTION 11
+
+iniTime=1; finTime=77.45/100; t=5730; halfLife=0.5;
+% f(t)=f(0)e^kt
+% k=log(f(t)/f(0))/t
+% k=(log()/log(f(t)))/t
+k=(log(halfLife/iniTime))/t
+t=(log(finTime/iniTime))/k;
+t=round(t)
+
+%%                          QUESTION 12
+
