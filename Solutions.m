@@ -98,3 +98,52 @@ t=round(t)
 
 %%                          QUESTION 12
 
+c=300e6; wvs=630; wvp=530;
+%wvp=wvs*sqrt((1-v/c)/(1+v/c))
+v=((wvs^2-wvp^2)*c)/(wvp^2-wvs^2)
+
+%%                          QUESTION 13
+
+To=98.6; Ts=69; To1=79.5; t=60; T_t=78.0;
+% T_t=Ts+(To-Ts)*exp(-k*t)
+k=log((T_t-Ts)/(To1-Ts))/-t;
+t=round(log((T_t-Ts)/(To-Ts))/-k)
+
+%%                          QUESTION 14
+
+Vc=36; R=2500; C=1600e-6; t=8;
+% Vc=Vo(1-e^-t/(RC))
+Vo=Vc/(1-exp(-t/(R*C)))
+I=Vo/R
+
+%%                          QUESTION 15
+
+Vo=600; theta=54; g=32.2;
+% Calculate t_travel, x_max and h_max
+t_travel=(2*Vo*sind(theta))/g
+x_max=(2*Vo^2*sind(theta)*cosd(theta))/g
+h_max=(Vo^2*(sind(theta))^2)/(2*g)
+
+%%                          QUESTION 16
+
+L=300/100; r2=5/100; r1=3/100; T2=20; T1=100; k=401;
+q=2*pi*L*k*((T1-T2)/log(r2/r1))
+
+%%                          QUESTION 17
+
+c=300e6; v=5000; L=2;
+lambda=L*(1-sqrt(1-(v^2/c^2)))
+
+%%                          QUESTION 18
+
+a=5; b=7; gamma=25;
+% a)
+c=sqrt(a^2+b^2-2*a*b*cosd(gamma))
+% b)
+% sind(beta)/b=sind(gamma)/c
+beta=asind(sind(gamma)/c*b)
+% sind(alpha)/a=sind(gamma)/c
+alpha=asind(sind(gamma)/c*a)
+% c)
+LHS=(a-b)/(a+b)
+RHS=tand((1/2*(alpha-beta)))/tand((1/2*(alpha+beta)))
